@@ -1,0 +1,9 @@
+sources:
+  - name: demo
+    description: "Raw data from the SNOWFLAKE database."
+    database: DEMO
+    schema: DEMO_SCHEMA
+    tables:
+      - name: BIKE
+      - name: WEATHER
+      
