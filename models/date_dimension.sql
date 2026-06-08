@@ -19,7 +19,7 @@ AS SEASON_OF_YEAR
 
 
 FROM
-{{ source('demo', 'BIKE') }}
+{{ ref('stg_bike') }}
 where STARTED_AT != 'started_at'
 
 )

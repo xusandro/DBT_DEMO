@@ -2,7 +2,6 @@ WITH TRIPS as (
 
     SELECT
     ride_id,
-    rideable_type,
     DATE(TO_TIMESTAMP(STARTED_AT)) AS trip_date,
     start_statio_id as start_station_id,
     end_station_id,
@@ -10,7 +9,7 @@ WITH TRIPS as (
     TIMESTAMPDIFF(SECOND, TO_TIMESTAMP(STARTED_AT), TO_TIMESTAMP(ENDED_AT)) AS trip_duration_seconds
 
 
-    FROM {{ source('demo', 'BIKE') }}
+    FROM {{ ref('stg_bike') }}
 
     WHERE RIDE_ID != 'ride_id'
 
